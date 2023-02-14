@@ -8,6 +8,10 @@ export default class Artist {
         this._name = name;
     }
 
+    get name() {
+        return this._name;
+    }
+
     addAlbum(album: Album) {
         this._albums.push(album);
     }

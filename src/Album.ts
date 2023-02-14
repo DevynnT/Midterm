@@ -21,6 +21,14 @@ export default class Album {
         this._title = title;
     }
 
+    get artist() {
+        return this._Artist;
+    }
+
+    get year() {
+        return this._year;
+    }
+
     get tracks() {
         return this._tracks;
     }
