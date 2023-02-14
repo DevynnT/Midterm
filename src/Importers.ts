@@ -12,13 +12,13 @@ export class LocalImporter implements IImportable {
     }
 
     importPlaylist() { 
-        const localPlaylist = require(this.path);
+        const localPlaylist= require(this.path);
 
         console.log(`Your playlist from ${this.path} will be loaded`);
 
         const playlist: Playlist = new Playlist("Local Playlist");
 
-        for (const albumData of localPlaylist) {
+        for (const albumData of localPlaylist.albums) {
             const artist = new Artist("Train");
             const album = new Album(albumData.name, artist, 2008);
 
@@ -48,6 +48,8 @@ export class CloudImporter implements IImportable {
         ];
 
         const playlist: Playlist = new Playlist("Cloud Playlist");
+
+        console.log(`Importing playlist from ${this.url}`);
 
         for (const albumData of cloudPlaylist) {
             const artist = new Artist(albumData.artistName);
